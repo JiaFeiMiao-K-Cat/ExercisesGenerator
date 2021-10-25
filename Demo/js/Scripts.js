@@ -12,19 +12,28 @@ function BlazorRegisterStorageEvent(component) {
     });
 }
 function ChangeDisplay(ID, ColumnNumber, style) {
-    var needHide = document.getElementById(ID).rows;
-    for (var i = 0, len = needHide.length; i < len; i++) {
-        var cell = needHide[i].cells[ColumnNumber];
+    var needChange = document.getElementById(ID).rows;
+    for (var i = 0, len = needChange.length; i < len; i++) {
+        var cell = needChange[i].cells[ColumnNumber];
         cell.style.display = style;
     }
 }
+function HideDiv(ID) {
+    var needHide = document.getElementById(ID);
+    needHide.display = "none";
+}
+function ShowDiv(ID) {
+    var needShow = document.getElementById(ID);
+    needShow.display = "";
+}
 function PrintDiv(ID) {
-    var exercises = document.getElementById(ID);
+    var needPrint = document.getElementById(ID);
     var win = window.open("");
-    win.document.write('<html><head><link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />'
+    win.document.write(
+        '<html><head><link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />'
         + '<link href="css/app.css" rel="stylesheet" />'
         + '<link href="PWA.styles.css" rel="stylesheet" /></head><body>'
-        + exercises.outerHTML + '</body>'
+        + needPrint.outerHTML + '</body>'
         + "</html>");
     win.document.close();
     //Chrome

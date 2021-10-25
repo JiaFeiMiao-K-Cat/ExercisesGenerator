@@ -53,3 +53,19 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+.fraction {
+    display: inline-block;
+    text-align: center;
+}
+
+.fraction, .top, .bottom {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: medium;
+    vertical-align: middle;
+}
+
+.bottom {
+    border-top: 1px solid black;
+    display: block;
+}
